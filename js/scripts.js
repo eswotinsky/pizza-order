@@ -10,17 +10,17 @@ Pizza.prototype.price = function() {
 
   switch (this.size) {
     case "Small":
-      price += 6;
-      break;
+    price += 7;
+    break;
     case "Medium":
-      price += 11;
-      break;
+    price += 11;
+    break;
     case "Large":
-      price += 13;
-      break;
+    price += 14;
+    break;
     default:
-      price += 0;
-      break;
+    price += 0;
+    break;
   }
   return price.toFixed(2);
 }
@@ -33,30 +33,44 @@ function readToppings() {
   return toppingsList;
 }
 
-function confirmToppings (toppings) {
-  $("#confirmToppings").text("");
-  toppings.forEach(function(topping){
-    $("#confirmToppings").append("<li>" + topping + "</li>");
-  })
+function confirmToppings(toppings) {
+  if (toppings.length > 0) {
+    $("#confirmToppings").text("");
+    toppings.forEach(function(topping) {
+      $("#confirmToppings").append("<li>" + topping + "</li>");
+    })
+  }
+  else {
+      $("#confirmToppings").text("no toppings selected");
+  }
 }
 
 
 //front end
 $(function() {
 
-  $("#orderPizza").click(function(){
+  $("form")[0].reset();
 
-    var orderToppings = readToppings();
+  $("#orderPizza").click(function() {
 
     var orderSize = $("input[name=size]:checked").val();
 
-    var myPizza = new Pizza(orderToppings, orderSize);
+    if (orderSize == undefined) {
+      alert("Please choose a size");
+    }
 
-    $("#orderConfirmed").show();
-    $("#confirmSize").text(orderSize);
-    confirmToppings(orderToppings);
-    $("#confirmPrice").text(myPizza.price());
+    else {
+
+      var orderToppings = readToppings();
+
+      var myPizza = new Pizza(orderToppings, orderSize);
+
+      $("#orderConfirmed").show();
+      $("#confirmSize").text(orderSize);
+      confirmToppings(orderToppings);
+      $("#confirmPrice").text(myPizza.price());
+    }
+
   })
-
 
 })
