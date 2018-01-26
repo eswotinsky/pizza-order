@@ -6,18 +6,17 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.price = function() {
   var price = 0;
-  price += (this.toppings.length * 1.5);
-  console.log(price);
+  price += ((this.toppings.length - 2) * 1.5);
 
   switch (this.size) {
-    case "small":
-      price += 5;
+    case "Small":
+      price += 6;
       break;
-    case "medium":
-      price += 10;
+    case "Medium":
+      price += 11;
       break;
-    case "large":
-      price += 12;
+    case "Large":
+      price += 13;
       break;
     default:
       price += 0;
@@ -53,12 +52,10 @@ $(function() {
 
     var myPizza = new Pizza(orderToppings, orderSize);
 
-    var pizzaPrice = myPizza.price();
-
     $("#orderConfirmed").show();
     $("#confirmSize").text(orderSize);
     confirmToppings(orderToppings);
-
+    $("#confirmPrice").text(myPizza.price());
   })
 
 

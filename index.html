@@ -15,22 +15,27 @@
 
       <div class="form-group" id="orderSize">
         <h3>Choose Your Size</h3>
-        <input type="radio" name="size" value="small">Small (10")<br>
-        <input type="radio" name="size" value="medium">Medium (12")<br>
-        <input type="radio" name="size" value="large">Large (16")
+        <input type="radio" name="size" value="Small">Small (10")<br>
+        <input type="radio" name="size" value="Medium">Medium (12")<br>
+        <input type="radio" name="size" value="Large">Large (16")
       </div>
 
       <div class="form-group">
         <h3>Choose Your Toppings</h3>
-        <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
-        <input type="checkbox" name="toppings" value="sausage">Sausage<br>
-        <input type="checkbox" name="toppings" value="chicken">Chicken<br><br>
-        <input type="checkbox" name="toppings" value="broccoli">Broccoli<br>
-        <input type="checkbox" name="toppings" value="green-peppers">Green Peppers<br>
-        <input type="checkbox" name="toppings" value="red-peppers">Red Peppers<br>
-        <input type="checkbox" name="toppings" value="japlapenos">Jalapeños<br>
-        <input type="checkbox" name="toppings" value="olives">Olives<br>
-        <input type="checkbox" name="toppings" value="onion">Onion<br>
+        <p>Your first two toppings are free! Each additional topping will add $1.50 to your final price.</p>
+        <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
+        <input type="checkbox" name="toppings" value="Chicken">Chicken<br>
+        <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
+        <input type="checkbox" name="toppings" value="Sausage">Sausage<br><br>
+        <input type="checkbox" name="toppings" value="Basil">Basil<br>
+        <input type="checkbox" name="toppings" value="Broccoli">Broccoli<br>
+        <input type="checkbox" name="toppings" value="Green Peppers">Green Peppers<br>
+        <input type="checkbox" name="toppings" value="Japlapeños">Jalapeños<br>
+        <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
+        <input type="checkbox" name="toppings" value="Olives">Olives<br>
+        <input type="checkbox" name="toppings" value="Onion">Onion<br>
+        <input type="checkbox" name="toppings" value="Red Peppers">Red Peppers<br>
+        <input type="checkbox" name="toppings" value="Spinach">Spinach
       </div>
 
       <button type="button" id="orderPizza">Confirm Your Order</button>
@@ -43,6 +48,7 @@
       <p>Toppings:</p>
       <ul id="confirmToppings">
       </ul>
+      <p>Total Cost: <span id="confirmPrice"></span></p>
     </div>
 
   </div>
