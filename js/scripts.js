@@ -33,32 +33,32 @@ function readToppings() {
   return toppingsList;
 }
 
+function confirmToppings (toppings) {
+  $("#confirmToppings").text("");
+  toppings.forEach(function(topping){
+    $("#confirmToppings").append("<li>" + topping + "</li>");
+  })
+}
+
 
 //front end
 $(function() {
 
   $("#orderPizza").click(function(){
 
-
     var orderToppings = $("input[name=toppings]:checked").length;
-    console.log(orderToppings);
 
     var orderSize = $("input[name=size]:checked").val();
-    console.log(orderSize);
+
+    var myPizza = new Pizza(orderToppings, orderSize);
+
+    var pizzaPrice = myPizza.price();
 
     var toppingsArray = readToppings();
 
-    console.log(toppingsArray);
-
-    var myPizza = new Pizza(orderToppings, orderSize);
-    console.log(myPizza);
-
-    var pizzaPrice = myPizza.price();
-    console.log(pizzaPrice);
-
     $("#orderConfirmed").show();
     $("#confirmSize").text(orderSize);
-    $("#confirmToppings").text(orderToppings);
+    confirmToppings(toppingsArray);
 
   })
 
