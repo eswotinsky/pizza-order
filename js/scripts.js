@@ -1,5 +1,4 @@
 //back end
-
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
@@ -16,6 +15,9 @@ Pizza.prototype.price = function() {
     case "medium":
       price += 10;
       break;
+    case "large":
+      price += 12;
+      break;
     default:
       price += 0;
       break;
@@ -23,6 +25,13 @@ Pizza.prototype.price = function() {
   return price;
 }
 
+function readToppings() {
+  var toppingsList = [];
+  $("input[name=toppings]:checked").each(function(){
+    toppingsList.push($(this).val());
+  })
+  return toppingsList;
+}
 
 
 //front end
@@ -37,12 +46,19 @@ $(function() {
     var orderSize = $("input[name=size]:checked").val();
     console.log(orderSize);
 
+    var toppingsArray = readToppings();
+
+    console.log(toppingsArray);
 
     var myPizza = new Pizza(orderToppings, orderSize);
     console.log(myPizza);
 
     var pizzaPrice = myPizza.price();
     console.log(pizzaPrice);
+
+    $("#orderConfirmed").show();
+    $("#confirmSize").text(orderSize);
+    $("#confirmToppings").text(orderToppings);
 
   })
 
