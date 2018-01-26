@@ -6,7 +6,13 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.price = function() {
   var price = 0;
-  price += ((this.toppings.length - 2) * 1.5);
+  var extraToppings = (this.toppings.length - 2) * 1.5;
+
+//allows for 2 free toppings while preventing a price decrease for users who select less than 2 toppings
+  if (extraToppings > 0) {
+    price += extraToppings;
+  }
+//  price += ((this.toppings.length - 2) * 1.5);
 
   switch (this.size) {
     case "Small":
