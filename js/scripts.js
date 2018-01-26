@@ -22,7 +22,7 @@ Pizza.prototype.price = function() {
       price += 0;
       break;
   }
-  return price;
+  return price.toFixed(2);
 }
 
 function readToppings() {

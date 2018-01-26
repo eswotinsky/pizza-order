@@ -1,3 +1,31 @@
+body {
+  background: url(../img/bg-pizza.jpg);
+  background-size: 100% auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  color: yellow;
+}
+
 #orderConfirmed {
   display: none;
+}
+
+.container {
+  background-color:rgba(20, 20, 20, 0.6);
+  color: white;
+  width: 80%;
+}
+
+button {
+  color: black;
+}
+
+.well {
+  color: black;
+  width: 50%
 }

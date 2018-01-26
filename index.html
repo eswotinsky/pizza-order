@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
   <script src="js/scripts.js" charset="utf-8"></script>
-  <title>Pizza Place</title>
+  <title>Place Your Order - Epizzacodus</title>
 </head>
 <body>
   <div class="container">
-    <h1>pizza place</h1>
+    <h1>Epizzacodus</h1>
     <form class="" action="index.html" method="post">
 
       <div class="form-group" id="orderSize">
@@ -41,14 +41,15 @@
       <button type="button" id="orderPizza">Confirm Your Order</button>
     </form>
     <br>
+
     <div class="well" id="orderConfirmed">
-      <h3>Order Confirmed!</h3>
+      <h2>Order Confirmed!</h3>
       <p>We've received your order! View the details below:</p>
-      <p>Size: <span id="confirmSize"></span></p>
-      <p>Toppings:</p>
+      <p><strong>Size: </strong><span id="confirmSize"></span></p>
+      <p><strong>Toppings:</strong></p>
       <ul id="confirmToppings">
       </ul>
-      <p>Total Cost: <span id="confirmPrice"></span></p>
+      <p><strong>Total Cost: </strong>$<span id="confirmPrice"></span></p>
     </div>
 
   </div>
