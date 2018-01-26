@@ -6,9 +6,37 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.2.1.min.js" charset="utf-8"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
-    <title>Pizza</title>
+    <title>Pizza Place</title>
   </head>
   <body>
+    <div class="container">
+      <h1>pizza place</h1>
+      <form class="" action="index.html" method="post">
 
+        <div class="form-group">
+          <h3>Choose Your Size</h3>
+          <input type="radio" name="size" value="small">Small (12")<br>
+          <input type="radio" name="size" value="medium">Medium (16")<br>
+          <input type="radio" name="size" value="large">Large (20")
+        </div>
+
+        <div class="form-group">
+          <h3>Choose Your Toppings</h3>
+            <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+            <input type="checkbox" name="toppings" value="sausage">Sausage<br>
+            <input type="checkbox" name="toppings" value="chicken">Chicken<br><br>
+            <input type="checkbox" name="toppings" value="broccoli">Broccoli<br>
+            <input type="checkbox" name="toppings" value="green-peppers">Green Peppers<br>
+            <input type="checkbox" name="toppings" value="red-peppers">Red Peppers<br>
+            <input type="checkbox" name="toppings" value="japlapenos">Jalapeños<br>
+            <input type="checkbox" name="toppings" value="olives">Olives<br>
+            <input type="checkbox" name="toppings" value="onion">Onion<br>
+        </div>
+
+        <button type="submit" id="orderPizza">Confirm Your Order</button>
+      </form>
+
+
+    </div>
   </body>
 </html>
