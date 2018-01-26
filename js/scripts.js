@@ -6,7 +6,8 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.price = function() {
   var price = 0;
-  price += (this.toppings * 1.5);
+  price += (this.toppings.length * 1.5);
+  console.log(price);
 
   switch (this.size) {
     case "small":
@@ -46,7 +47,7 @@ $(function() {
 
   $("#orderPizza").click(function(){
 
-    var orderToppings = $("input[name=toppings]:checked").length;
+    var orderToppings = readToppings();
 
     var orderSize = $("input[name=size]:checked").val();
 
@@ -54,11 +55,9 @@ $(function() {
 
     var pizzaPrice = myPizza.price();
 
-    var toppingsArray = readToppings();
-
     $("#orderConfirmed").show();
     $("#confirmSize").text(orderSize);
-    confirmToppings(toppingsArray);
+    confirmToppings(orderToppings);
 
   })
 
