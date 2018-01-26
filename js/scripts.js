@@ -12,7 +12,6 @@ Pizza.prototype.price = function() {
   if (extraToppings > 0) {
     price += extraToppings;
   }
-//  price += ((this.toppings.length - 2) * 1.5);
 
   switch (this.size) {
     case "Small":
